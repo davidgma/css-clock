@@ -154,13 +154,10 @@ body {
 
     & .icon {
       padding: 0.2rem;
-      font-size: 1.5rem;
+      --font-size: min(90vw / 15, 90vh / 15);
+      font-size: var(--font-size);
       color: var(--foreground);
       position: absolute;
-      @media screen and (min-width: 790px) {
-        padding-left: 1rem;
-        font-size: 4rem;
-      }
       &:hover {
         cursor: pointer;
       }
@@ -168,27 +165,16 @@ body {
 
     & #home {
       top: 96%;
-      @media screen and (min-width: 790px) {
-        top: 92%;
-        left: -6%;
-      }
     }
 
     & #colour-mode {
       top: 96%;
       left: 10%;
-      @media screen and (min-width: 790px) {
-        top: 92%;
-        left: 5%;
-      }
     }
 
     & #edit {
       top: 96%;
       left: 90%;
-      @media screen and (min-width: 790px) {
-        top: 92%;
-      }
     }
   }
 }
@@ -201,7 +187,6 @@ body {
   background: var(--foreground);
   left: 50%;
   margin-left: -1px;
-  // transform-origin: 50% 150px;
   transform-origin: 50% min(45vw, 45vh);
 }
 .dialline-large {
@@ -211,7 +196,6 @@ body {
   height: min(4vh, 4vw);
   background: var(--foreground);
   left: 50%;
-  // top: 33%;
   margin-left: -1px;
   transform-origin: 50% min(45vw, 45vh);
 }

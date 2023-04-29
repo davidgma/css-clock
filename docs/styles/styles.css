@@ -148,15 +148,10 @@ body {
 }
 .all-screen .clock-face .icon {
   padding: 0.2rem;
-  font-size: 1.5rem;
+  --font-size: min(90vw / 15, 90vh / 15);
+  font-size: var(--font-size);
   color: var(--foreground);
   position: absolute;
-}
-@media screen and (min-width: 790px) {
-  .all-screen .clock-face .icon {
-    padding-left: 1rem;
-    font-size: 4rem;
-  }
 }
 .all-screen .clock-face .icon:hover {
   cursor: pointer;
@@ -164,30 +159,13 @@ body {
 .all-screen .clock-face #home {
   top: 96%;
 }
-@media screen and (min-width: 790px) {
-  .all-screen .clock-face #home {
-    top: 92%;
-    left: -6%;
-  }
-}
 .all-screen .clock-face #colour-mode {
   top: 96%;
   left: 10%;
 }
-@media screen and (min-width: 790px) {
-  .all-screen .clock-face #colour-mode {
-    top: 92%;
-    left: 5%;
-  }
-}
 .all-screen .clock-face #edit {
   top: 96%;
   left: 90%;
-}
-@media screen and (min-width: 790px) {
-  .all-screen .clock-face #edit {
-    top: 92%;
-  }
 }
 
 .dialline {
