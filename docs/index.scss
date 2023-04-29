@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --background: #202020;
+  --foreground: #e8e8e8;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+}
+
+.all-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .clock-face {
+    border: min(0.5vh, 0.5vw) solid var(--foreground);
+    --clock-size: min(91vw, 91vh);
+    width: var(--clock-size);
+    height: var(--clock-size);
+    border-radius: 50%;
+    position: relative;
+    color: var(--foreground);
+    --font-size: min(90vw / 15, 90vh / 15);
+    font-size: var(--font-size);
+
+    & #h12 {
+      position: absolute;
+      top: 5%;
+      left: 47%;
+    }
+    & #h1 {
+      position: absolute;
+      top: 10%;
+      left: 69%;
+    }
+    & #h2 {
+      position: absolute;
+      top: 25%;
+      left: 85%;
+    }
+    & #h3 {
+      position: absolute;
+      top: 46%;
+      left: 91%;
+    }
+    & #h4 {
+      position: absolute;
+      top: 68%;
+      left: 85%;
+    }
+    & #h5 {
+      position: absolute;
+      top: 82%;
+      left: 69%;
+    }
+    & #h6 {
+      position: absolute;
+      top: 87%;
+      left: 48%;
+    }
+    & #h7 {
+      position: absolute;
+      top: 81%;
+      left: 27%;
+    }
+    & #h8 {
+      position: absolute;
+      top: 68%;
+      left: 12%;
+    }
+    & #h9 {
+      position: absolute;
+      top: 46%;
+      left: 6%;
+    }
+    & #h10 {
+      position: absolute;
+      top: 25%;
+      left: 11%;
+    }
+    & #h11 {
+      position: absolute;
+      top: 10%;
+      left: 26%;
+    }
+
+    & .seconds {
+      position: absolute;
+      transform-origin: bottom;
+      bottom: 50%;
+      left: 50%;
+      background-color: red;
+      height: min(45vh, 45vw);
+      width: min(1vh, 1vw);
+      border-radius: calc(1cqi * 2);
+      animation: turn 60s linear infinite;
+      animation-delay: var(--_ds, 0ms);
+    }
+
+    & .minutes {
+      position: absolute;
+      transform-origin: bottom;
+      bottom: 50%;
+      left: 50%;
+      background-color: var(--foreground);
+      height: min(35vh, 35vw);
+      width: min(2.5vh, 2.5vw);
+      border-radius: calc(2.5cqi * 2);
+      animation: turn 3600s steps(60, end) infinite;
+      animation-delay: var(--_dm, 0ms);
+    }
+
+    & .hours {
+      position: absolute;
+      transform-origin: bottom;
+      bottom: 50%;
+      left: 50%;
+      background-color: var(--foreground);
+      height: min(20vh, 20vw);
+      width: min(2.5vh, 2.5vw);
+      border-radius: calc(2.5cqi * 2);
+      animation: turn 43200s linear infinite;
+      /* 60 * 60 * 12 */
+      animation-delay: var(--_dh, 0ms);
+    }
+
+    & .dot {
+      width: min(6vh, 6vw);
+      height: min(6vh, 6vw);
+      border-radius: 50%;
+      background: var(--foreground);
+      // background-color: rgba(32, 32, 32, .5);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      position: absolute;
+      z-index: 10;
+      box-shadow: 0 2px 4px -1px black;
+    }
+
+    & .icon {
+      padding: 0.2rem;
+      font-size: 1.5rem;
+      color: var(--foreground);
+      position: absolute;
+      @media screen and (min-width: 790px) {
+        padding-left: 1rem;
+        font-size: 4rem;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    & #home {
+      top: 96%;
+      @media screen and (min-width: 790px) {
+        top: 92%;
+        left: -5%;
+      }
+    }
+
+    & #colour-mode {
+      top: 96%;
+      left: 10%;
+      @media screen and (min-width: 790px) {
+        top: 92%;
+        left: 5%;
+      }
+    }
+
+    & #edit {
+      top: 96%;
+      left: 90%;
+      @media screen and (min-width: 790px) {
+        top: 92%;
+      }
+    }
+  }
+}
+
+.dialline {
+  position: absolute;
+  z-index: 2;
+  width: min(0.5vh, 0.5vw);
+  height: min(2vh, 2vw);
+  background: var(--foreground);
+  left: 50%;
+  margin-left: -1px;
+  // transform-origin: 50% 150px;
+  transform-origin: 50% min(45vw, 45vh);
+}
+.dialline-large {
+  position: absolute;
+  z-index: 2;
+  width: min(1vh, 1vw);
+  height: min(4vh, 4vw);
+  background: var(--foreground);
+  left: 50%;
+  // top: 33%;
+  margin-left: -1px;
+  transform-origin: 50% min(45vw, 45vh);
+}
+
+@keyframes turn {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
