@@ -93,11 +93,11 @@ function toggleColourMode(event) {
 }
 function editOnStackblitz(event) {
     if (window != null) {
-        window.open('https://stackblitz.com/edit/css-clock-night', '_blank');
+        window.open('https://stackblitz.com/edit/css-clock', '_blank');
     }
 }
 function openGithubVersion(event) {
     if (window != null) {
-        window.open('https://davidgma.github.io/css-clock-night/', '_blank');
+        window.open('https://davidgma.github.io/css-clock/', '_blank');
     }
 }
