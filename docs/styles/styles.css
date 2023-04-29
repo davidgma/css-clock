@@ -98,11 +98,12 @@ body {
   bottom: 50%;
   left: 50%;
   background-color: red;
-  height: min(45vh, 45vw);
+  height: min(43vh, 43vw);
   width: min(1vh, 1vw);
   border-radius: 2cqi;
   animation: turn 60s linear infinite;
   animation-delay: var(--_ds, 0ms);
+  z-index: 7;
 }
 .all-screen .clock-face .minutes {
   position: absolute;
@@ -115,6 +116,7 @@ body {
   border-radius: 5cqi;
   animation: turn 3600s steps(60, end) infinite;
   animation-delay: var(--_dm, 0ms);
+  z-index: 8;
 }
 .all-screen .clock-face .hours {
   position: absolute;
@@ -128,6 +130,7 @@ body {
   animation: turn 43200s linear infinite;
   /* 60 * 60 * 12 */
   animation-delay: var(--_dh, 0ms);
+  z-index: 9;
 }
 .all-screen .clock-face .dot {
   width: min(6vh, 6vw);

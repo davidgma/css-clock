@@ -99,11 +99,12 @@ body {
       bottom: 50%;
       left: 50%;
       background-color: red;
-      height: min(44vh, 44vw);
+      height: min(43vh, 43vw);
       width: min(1vh, 1vw);
       border-radius: calc(1cqi * 2);
       animation: turn 60s linear infinite;
       animation-delay: var(--_ds, 0ms);
+      z-index: 7;
     }
 
     & .minutes {
@@ -117,6 +118,7 @@ body {
       border-radius: calc(2.5cqi * 2);
       animation: turn 3600s steps(60, end) infinite;
       animation-delay: var(--_dm, 0ms);
+      z-index: 8;
     }
 
     & .hours {
@@ -131,6 +133,7 @@ body {
       animation: turn 43200s linear infinite;
       /* 60 * 60 * 12 */
       animation-delay: var(--_dh, 0ms);
+      z-index: 9;
     }
 
     & .dot {
