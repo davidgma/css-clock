@@ -7,6 +7,7 @@
 :root {
   --background: #202020;
   --foreground: #e8e8e8;
+  --font-size: min(90vw / 15, 90vh / 15);
 }
 
 body {
@@ -29,7 +30,6 @@ body {
     border-radius: 50%;
     position: relative;
     color: var(--foreground);
-    --font-size: min(90vw / 15, 90vh / 15);
     font-size: var(--font-size);
 
     & #h12 {
@@ -154,7 +154,7 @@ body {
 
     & .icon {
       padding: 0.2rem;
-      --font-size: min(90vw / 15, 90vh / 15);
+      // --font-size: min(90vw / 15, 90vh / 15);
       font-size: var(--font-size);
       color: var(--foreground);
       position: absolute;
