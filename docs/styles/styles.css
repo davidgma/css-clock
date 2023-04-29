@@ -109,7 +109,7 @@ body {
   position: absolute;
   transform-origin: bottom;
   bottom: 50%;
-  left: 50%;
+  left: 48.5%;
   background-color: var(--foreground);
   height: min(35vh, 35vw);
   width: min(2.5vh, 2.5vw);
