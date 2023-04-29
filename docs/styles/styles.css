@@ -167,7 +167,7 @@ body {
 @media screen and (min-width: 790px) {
   .all-screen .clock-face #home {
     top: 92%;
-    left: -5%;
+    left: -6%;
   }
 }
 .all-screen .clock-face #colour-mode {
