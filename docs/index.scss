@@ -32,70 +32,65 @@ body {
     color: var(--foreground);
     font-size: var(--font-size);
 
-    & #h12 {
+    & time {
       position: absolute;
+    }
+
+    & #h12 {
       top: 5%;
       left: 47%;
     }
     & #h1 {
-      position: absolute;
       top: 10%;
       left: 69%;
     }
     & #h2 {
-      position: absolute;
       top: 25%;
       left: 85%;
     }
     & #h3 {
-      position: absolute;
       top: 46%;
       left: 91%;
     }
     & #h4 {
-      position: absolute;
       top: 68%;
       left: 85%;
     }
     & #h5 {
-      position: absolute;
       top: 82%;
       left: 69%;
     }
     & #h6 {
-      position: absolute;
       top: 87%;
       left: 48%;
     }
     & #h7 {
-      position: absolute;
       top: 81%;
       left: 27%;
     }
     & #h8 {
-      position: absolute;
       top: 68%;
       left: 12%;
     }
     & #h9 {
-      position: absolute;
       top: 46%;
       left: 6%;
     }
     & #h10 {
-      position: absolute;
       top: 25%;
       left: 11%;
     }
     & #h11 {
-      position: absolute;
       top: 10%;
       left: 26%;
     }
 
-    & .seconds {
+    & .arm {
       position: absolute;
       transform-origin: bottom;
+    }
+
+    & .seconds {
       bottom: 50%;
       left: 50%;
       background-color: red;
@@ -108,8 +103,6 @@ body {
     }
 
     & .minutes {
-      position: absolute;
-      transform-origin: bottom;
       bottom: 50%;
       left: 48.5%;
       background-color: var(--foreground);
@@ -122,8 +115,6 @@ body {
     }
 
     & .hours {
-      position: absolute;
-      transform-origin: bottom;
       bottom: 50%;
       left: 50%;
       background-color: var(--foreground);

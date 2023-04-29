@@ -32,69 +32,62 @@ body {
   color: var(--foreground);
   font-size: var(--font-size);
 }
-.all-screen .clock-face #h12 {
+.all-screen .clock-face time {
   position: absolute;
+}
+.all-screen .clock-face #h12 {
   top: 5%;
   left: 47%;
 }
 .all-screen .clock-face #h1 {
-  position: absolute;
   top: 10%;
   left: 69%;
 }
 .all-screen .clock-face #h2 {
-  position: absolute;
   top: 25%;
   left: 85%;
 }
 .all-screen .clock-face #h3 {
-  position: absolute;
   top: 46%;
   left: 91%;
 }
 .all-screen .clock-face #h4 {
-  position: absolute;
   top: 68%;
   left: 85%;
 }
 .all-screen .clock-face #h5 {
-  position: absolute;
   top: 82%;
   left: 69%;
 }
 .all-screen .clock-face #h6 {
-  position: absolute;
   top: 87%;
   left: 48%;
 }
 .all-screen .clock-face #h7 {
-  position: absolute;
   top: 81%;
   left: 27%;
 }
 .all-screen .clock-face #h8 {
-  position: absolute;
   top: 68%;
   left: 12%;
 }
 .all-screen .clock-face #h9 {
-  position: absolute;
   top: 46%;
   left: 6%;
 }
 .all-screen .clock-face #h10 {
-  position: absolute;
   top: 25%;
   left: 11%;
 }
 .all-screen .clock-face #h11 {
-  position: absolute;
   top: 10%;
   left: 26%;
 }
-.all-screen .clock-face .seconds {
+.all-screen .clock-face .arm {
   position: absolute;
   transform-origin: bottom;
+}
+.all-screen .clock-face .seconds {
   bottom: 50%;
   left: 50%;
   background-color: red;
@@ -106,8 +99,6 @@ body {
   z-index: 7;
 }
 .all-screen .clock-face .minutes {
-  position: absolute;
-  transform-origin: bottom;
   bottom: 50%;
   left: 48.5%;
   background-color: var(--foreground);
@@ -119,8 +110,6 @@ body {
   z-index: 8;
 }
 .all-screen .clock-face .hours {
-  position: absolute;
-  transform-origin: bottom;
   bottom: 50%;
   left: 50%;
   background-color: var(--foreground);
