@@ -111,7 +111,7 @@ body {
 }
 .all-screen .clock-face .hours {
   bottom: 50%;
-  left: 50%;
+  left: 48.5%;
   background-color: var(--foreground);
   height: min(20vh, 20vw);
   width: min(2.5vh, 2.5vw);
