@@ -8,6 +8,11 @@
   --background: #202020;
   --foreground: #e8e8e8;
   --font-size: min(90vw / 15, 90vh / 15);
+  --icon-size: min(90vw / 8, 90vh / 8);
+  --clock-size: min(91vw, 91vh);
+  --transform-origin: 50% min(45vw, 45vh);
+  --clock-top: 4%;
+  --nav-top: 80%;
 }
 
 body {
@@ -15,14 +20,13 @@ body {
   background-color: var(--background);
 }
 
-.all-screen {
+#all-screen {
   width: 100vw;
   height: 100vh;
   position: relative;
 }
-.all-screen .clock-face {
+#all-screen #clock-face {
   border: min(0.5vh, 0.5vw) solid var(--foreground);
-  --clock-size: min(91vw, 91vh);
   width: var(--clock-size);
   height: var(--clock-size);
   border-radius: 50%;
@@ -30,63 +34,64 @@ body {
   color: var(--foreground);
   font-size: var(--font-size);
   margin: auto;
+  margin-top: var(--clock-top);
 }
-.all-screen .clock-face time {
+#all-screen #clock-face time {
   position: absolute;
 }
-.all-screen .clock-face #h12 {
+#all-screen #clock-face #h12 {
   top: 5%;
   left: 47%;
 }
-.all-screen .clock-face #h1 {
+#all-screen #clock-face #h1 {
   top: 10%;
   left: 69%;
 }
-.all-screen .clock-face #h2 {
+#all-screen #clock-face #h2 {
   top: 25%;
   left: 85%;
 }
-.all-screen .clock-face #h3 {
+#all-screen #clock-face #h3 {
   top: 46%;
   left: 91%;
 }
-.all-screen .clock-face #h4 {
+#all-screen #clock-face #h4 {
   top: 68%;
   left: 85%;
 }
-.all-screen .clock-face #h5 {
+#all-screen #clock-face #h5 {
   top: 82%;
   left: 69%;
 }
-.all-screen .clock-face #h6 {
+#all-screen #clock-face #h6 {
   top: 87%;
   left: 48%;
 }
-.all-screen .clock-face #h7 {
+#all-screen #clock-face #h7 {
   top: 81%;
   left: 27%;
 }
-.all-screen .clock-face #h8 {
+#all-screen #clock-face #h8 {
   top: 68%;
   left: 12%;
 }
-.all-screen .clock-face #h9 {
+#all-screen #clock-face #h9 {
   top: 46%;
   left: 6%;
 }
-.all-screen .clock-face #h10 {
+#all-screen #clock-face #h10 {
   top: 25%;
   left: 11%;
 }
-.all-screen .clock-face #h11 {
+#all-screen #clock-face #h11 {
   top: 10%;
   left: 26%;
 }
-.all-screen .clock-face .arm {
+#all-screen #clock-face .arm {
   position: absolute;
   transform-origin: bottom;
 }
-.all-screen .clock-face .seconds {
+#all-screen #clock-face .seconds {
   bottom: 50%;
   left: 50%;
   background-color: red;
@@ -97,7 +102,7 @@ body {
   animation-delay: var(--_ds, 0ms);
   z-index: 7;
 }
-.all-screen .clock-face .minutes {
+#all-screen #clock-face .minutes {
   bottom: 50%;
   left: 48.5%;
   background-color: var(--foreground);
@@ -108,11 +113,11 @@ body {
   animation-delay: var(--_dm, 0ms);
   z-index: 8;
 }
-.all-screen .clock-face .hours {
+#all-screen #clock-face .hours {
   bottom: 50%;
   left: 48.5%;
   background-color: var(--foreground);
-  height: min(24vh, 24vw);
+  height: min(23vh, 23vw);
   width: min(2.5vh, 2.5vw);
   border-radius: 5cqi;
   animation: turn 43200s linear infinite;
@@ -120,7 +125,7 @@ body {
   animation-delay: var(--_dh, 0ms);
   z-index: 9;
 }
-.all-screen .clock-face .dot {
+#all-screen #clock-face .dot {
   width: min(6vh, 6vw);
   height: min(6vh, 6vw);
   border-radius: 50%;
@@ -134,39 +139,36 @@ body {
   z-index: 10;
   box-shadow: 0 2px 4px -1px black;
 }
-.all-screen .navbar {
-  display: flex;
-  position: absolute;
-}
-.all-screen .navbar .icon {
-  padding: 0.5rem;
-  font-size: calc(var(--font-size) * 2);
-  color: var(--foreground);
-}
-.all-screen .navbar .icon:hover {
-  cursor: pointer;
-}
-
-.dialline {
+#all-screen #clock-face .dialline {
   position: absolute;
   z-index: 2;
   width: min(0.5vh, 0.5vw);
   height: min(2vh, 2vw);
   background: var(--foreground);
   left: 50%;
-  margin-left: -1px;
-  transform-origin: 50% min(45vw, 45vh);
+  transform-origin: var(--transform-origin);
 }
-
-.dialline-large {
+#all-screen #clock-face .dialline-large {
   position: absolute;
   z-index: 2;
   width: min(1vh, 1vw);
   height: min(4vh, 4vw);
   background: var(--foreground);
   left: 50%;
-  margin-left: -1px;
-  transform-origin: 50% min(45vw, 45vh);
+  transform-origin: var(--transform-origin);
+}
+#all-screen #navbar {
+  display: flex;
+  position: absolute;
+  top: var(--nav-top);
+}
+#all-screen #navbar .icon {
+  padding: 0.5rem;
+  font-size: var(--icon-size);
+  color: var(--foreground);
+}
+#all-screen #navbar .icon:hover {
+  cursor: pointer;
 }
 
 @keyframes turn {

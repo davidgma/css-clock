@@ -2,7 +2,7 @@
 onload = (event) => {
     console.log('page loaded');
     // Based on https://codepen.io/vaskopetrov/pen/yVEXjz
-    let clockEl = document.getElementsByClassName('clock-face')[0];
+    let clockEl = document.getElementById('clock-face');
     for (let i = 0; i < 60; i++) {
         let className = 'dialline';
         if (i % 5 === 0) {
@@ -32,12 +32,12 @@ onload = (event) => {
     if (home != null && home instanceof HTMLElement) {
         home.addEventListener('click', openGithubVersion);
     }
-    document.addEventListener("visibilitychange", () => {
-        if (document.visibilityState == "visible") {
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState == 'visible') {
             setHands();
         }
     });
-    window.addEventListener("resize", placeItems);
+    window.addEventListener('resize', placeItems);
 };
 function setHands() {
     /* to set current time */
@@ -61,7 +61,6 @@ function millisecondsToNextMinute() {
     return nextMinute - now.valueOf();
 }
 function updateClockRegularly() {
-    // console.log("in updateClockRegularly");
     setInterval(setHands, 60 * 1000);
 }
 function reset_animation() {
@@ -112,18 +111,39 @@ function openGithubVersion(event) {
 function placeItems() {
     let vh = window.innerHeight;
     let vw = window.innerWidth;
-    console.log("vh: " + vh);
+    let root = document.querySelector(':root');
+    console.log('vh: ' + vh);
     // The icons/navbar needs 10% of the width or height
     // 1. There's not enough space above or below
-    if (vh <= (vw * 1.1) && vw <= (vh * 1.1)) {
-        console.log("not enough space above or below");
+    if (vh <= vw * 1.1 && vw <= vh * 1.1) {
+        console.log('not enough space above or below');
+        // Make the clock face smaller with some margin at the top and put the icons at the bottom.
+        root.style.setProperty('--clock-size', '81vh');
+        root.style.setProperty('--font-size', '5.3vh');
+        root.style.setProperty('--transform-origin', '50% 40vh');
+        root.style.setProperty('--clock-top', '1.5vh');
+        root.style.setProperty('--nav-top', '83vh');
     }
     // 2. There's enough space below
-    if (vh >= (vw * 1.1)) {
-        console.log(" enough space below");
+    else if (vh >= vw * 1.1) {
+        console.log(' enough space below');
+        let clockSize = 91;
+        let fontSize = clockSize / 15;
+        let iconSize = clockSize / 8;
+        let spareSpace = vh - vw;
+        let transformSize = (clockSize - 1) / 2;
+        root.style.setProperty('--clock-size', clockSize.toFixed() + 'vw');
+        root.style.setProperty('--font-size', fontSize.toFixed() + 'vw');
+        root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'vw');
+        let top = (vh / 2 - vw / 2 - vh / 100 * 12).toFixed() + 'px';
+        console.log('top: ' + top);
+        root.style.setProperty('--nav-top', '80vh');
+        root.style.setProperty('--clock-top', top);
+        root.style.setProperty('--clock-top', '1.5vh');
+        root.style.setProperty('--nav-top', '83vh');
     }
     // 3. There's enough space to the right
-    if (vw >= (vh * 1.1)) {
-        console.log("enough space right");
+    if (vw >= vh * 1.1) {
+        console.log('enough space right');
     }
 }
