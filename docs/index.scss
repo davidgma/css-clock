@@ -11,11 +11,11 @@
   --icon-size: min(90vw / 8, 90vh / 8);
   --clock-size: min(91vw, 91vh);
   --transform-origin: 50% min(45vw, 45vh);
-  --clock-top: 0;
-  --nav-top: 75%;
+  --clock-top: 4%;
+  --nav-top: 80%;
   --nav-left: 5%;
   --allscreen-width: 100vw;
-  --allscreen-height: 100vh;
+  // --allscreen-height: 100vh;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
 
 #all-screen {
   width: var(--allscreen-width);
-  height: var(--allscreen-height);
+  // height: var(--allscreen-height);
   position: relative;
   max-width: 100%;
 

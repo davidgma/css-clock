@@ -18,7 +18,7 @@ onload = (event) => {
   }
 
   setHands();
-  // placeItems();
+  placeItems();
 
   console.log(
     'seconds to next whole minute: ' + millisecondsToNextMinute() / 1000
@@ -47,7 +47,7 @@ onload = (event) => {
     }
   });
 
-  // window.addEventListener('resize', placeItems);
+  window.addEventListener('resize', placeItems);
 };
 
 function setHands() {
@@ -154,11 +154,11 @@ function placeItems() {
   else if (vh >= vw * 1.1) {
     console.log(' enough space below');
     // sizes in pixels but based on viewport sizes
-    let clockSize = 81 * vw /100; // pixels
+    let clockSize = 91 * vw /100; // pixels
     let transformSize = (clockSize - 4) / 2;
     let fontSize = clockSize / 15;
     let iconSize = clockSize / 8;
-    let spareSpace = vh - clockSize - iconSize - 50;
+    let spareSpace = vh - clockSize - iconSize - 20;
     let clockTop = spareSpace / 2;
     let navTop = clockTop + clockSize - spareSpace/2;
     root.style.setProperty('--nav-top', navTop.toFixed() + "px");
@@ -169,12 +169,6 @@ function placeItems() {
     root.style.setProperty('--clock-top', clockTop.toFixed() + "px");
     root.style.setProperty('--nav-left', "20px");
     
-
-    // let top = (vh / 2 - vw / 2 - vh/100*12).toFixed() + 'px';
-    // console.log('top: ' + top);
-
-    // root.style.setProperty('--clock-top', '1.5vh');
-    // root.style.setProperty('--nav-top', '83vh');
   }
   // 3. There's enough space to the right
   if (vw >= vh * 1.1) {
