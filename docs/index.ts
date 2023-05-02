@@ -19,6 +19,8 @@ onload = (event) => {
   }
 
   setHands();
+  placeItems()
+
   console.log(
     'seconds to next whole minute: ' + millisecondsToNextMinute() / 1000
   );
@@ -44,7 +46,9 @@ onload = (event) => {
     if (document.visibilityState == "visible") {
       setHands();
     }
-  })
+  });
+
+  window.addEventListener("resize", placeItems);
 };
 
 function setHands() {
@@ -126,4 +130,30 @@ function openGithubVersion(event: MouseEvent) {
   if (window != null) {
     window.open('https://davidgma.github.io/css-clock/', '_blank');
   }
+}
+
+// place items basd on viewport dimensions
+function placeItems() {
+  let vh = window.innerHeight;
+  let vw = window.innerWidth;
+
+  console.log("vh: " + vh);
+
+  // The icons/navbar needs 10% of the width or height
+
+  // 1. There's not enough space above or below
+  if (vh <= (vw * 1.1) && vw <= (vh * 1.1)) {
+    console.log("not enough space above or below");
+  }
+  // 2. There's enough space below
+  if (vh >= (vw * 1.1) ) {
+    console.log(" enough space below");
+  }
+  // 3. There's enough space to the right
+  if (vw >= (vh * 1.1)) {
+    console.log("enough space right");
+  }
+
+  
+  
 }

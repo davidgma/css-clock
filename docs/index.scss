@@ -18,9 +18,7 @@ body {
 .all-screen {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 
   & .clock-face {
     border: min(0.5vh, 0.5vw) solid var(--foreground);
@@ -31,6 +29,7 @@ body {
     position: relative;
     color: var(--foreground);
     font-size: var(--font-size);
+    margin: auto;
 
     & time {
       position: absolute;
@@ -118,7 +117,7 @@ body {
       bottom: 50%;
       left: 48.5%;
       background-color: var(--foreground);
-      height: min(20vh, 20vw);
+      height: min(24vh, 24vw);
       width: min(2.5vh, 2.5vw);
       border-radius: calc(2.5cqi * 2);
       animation: turn 43200s linear infinite;
