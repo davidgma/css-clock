@@ -173,5 +173,20 @@ function placeItems() {
   // 3. There's enough space to the right
   if (vw >= vh * 1.1) {
     console.log('enough space right');
+    // sizes in pixels but based on viewport sizes
+    let clockSize = 91 * vh / 100; // pixels
+    let transformSize = (clockSize - 4) / 2;
+    let fontSize = clockSize / 15;
+    let iconSize = clockSize / 8;
+    let spareSpace = vw - clockSize - iconSize - 20;
+    let clockTop = 30;
+    let navTop = clockTop + clockSize - spareSpace / 2;
+    root.style.setProperty('--nav-top', navTop.toFixed() + "px");
+    root.style.setProperty('--clock-size', clockSize.toFixed() + 'px');
+    root.style.setProperty('--font-size', fontSize.toFixed() + 'px');
+    root.style.setProperty('--icon-size', iconSize.toFixed() + 'px');
+    root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
+    root.style.setProperty('--clock-top', clockTop.toFixed() + "px");
+    root.style.setProperty('--nav-left', "20px");
   }
 }
