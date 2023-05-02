@@ -127,20 +127,24 @@ function placeItems() {
     // 2. There's enough space below
     else if (vh >= vw * 1.1) {
         console.log(' enough space below');
-        let clockSize = 91;
+        // sizes in pixels but based on viewport sizes
+        let clockSize = 91 * vw / 100; // pixels
+        let transformSize = (clockSize - 1) / 2;
         let fontSize = clockSize / 15;
         let iconSize = clockSize / 8;
-        let spareSpace = vh - vw;
-        let transformSize = (clockSize - 1) / 2;
-        root.style.setProperty('--clock-size', clockSize.toFixed() + 'vw');
-        root.style.setProperty('--font-size', fontSize.toFixed() + 'vw');
-        root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'vw');
-        let top = (vh / 2 - vw / 2 - vh / 100 * 12).toFixed() + 'px';
-        console.log('top: ' + top);
-        root.style.setProperty('--nav-top', '80vh');
-        root.style.setProperty('--clock-top', top);
-        root.style.setProperty('--clock-top', '1.5vh');
-        root.style.setProperty('--nav-top', '83vh');
+        let spareSpace = vh - clockSize - iconSize;
+        let clockTop = spareSpace / 2;
+        let navTop = clockTop + clockSize + 0;
+        root.style.setProperty('--clock-size', clockSize.toFixed() + 'px');
+        root.style.setProperty('--font-size', fontSize.toFixed() + 'px');
+        root.style.setProperty('--icon-size', iconSize.toFixed() + 'px');
+        root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
+        root.style.setProperty('--clock-top', clockTop.toFixed() + "px");
+        root.style.setProperty('--nav-top', navTop.toFixed() + "px");
+        // let top = (vh / 2 - vw / 2 - vh/100*12).toFixed() + 'px';
+        // console.log('top: ' + top);
+        // root.style.setProperty('--clock-top', '1.5vh');
+        // root.style.setProperty('--nav-top', '83vh');
     }
     // 3. There's enough space to the right
     if (vw >= vh * 1.1) {
