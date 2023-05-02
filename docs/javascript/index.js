@@ -31,6 +31,11 @@ onload = (event) => {
     if (home != null && home instanceof HTMLElement) {
         home.addEventListener('click', openGithubVersion);
     }
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState == "visible") {
+            setHands();
+        }
+    });
 };
 function setHands() {
     /* to set current time */
