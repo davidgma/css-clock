@@ -161,6 +161,7 @@ body {
   display: flex;
   position: absolute;
   top: var(--nav-top);
+  left: var(--nav-left);
 }
 #all-screen #navbar .icon {
   padding: 0.5rem;
