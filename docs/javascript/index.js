@@ -16,7 +16,7 @@ onload = (event) => {
                 "deg)'></div>";
     }
     setHands();
-    placeItems();
+    // placeItems();
     console.log('seconds to next whole minute: ' + millisecondsToNextMinute() / 1000);
     setTimeout(setHands, millisecondsToNextMinute());
     setTimeout(updateClockRegularly, millisecondsToNextMinute());
@@ -37,7 +37,7 @@ onload = (event) => {
             setHands();
         }
     });
-    window.addEventListener('resize', placeItems);
+    // window.addEventListener('resize', placeItems);
 };
 function setHands() {
     /* to set current time */

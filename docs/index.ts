@@ -18,7 +18,7 @@ onload = (event) => {
   }
 
   setHands();
-  placeItems();
+  // placeItems();
 
   console.log(
     'seconds to next whole minute: ' + millisecondsToNextMinute() / 1000
@@ -47,7 +47,7 @@ onload = (event) => {
     }
   });
 
-  window.addEventListener('resize', placeItems);
+  // window.addEventListener('resize', placeItems);
 };
 
 function setHands() {
