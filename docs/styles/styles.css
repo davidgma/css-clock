@@ -134,25 +134,17 @@ body {
   z-index: 10;
   box-shadow: 0 2px 4px -1px black;
 }
-.all-screen .clock-face .icon {
-  padding: 0.2rem;
-  font-size: var(--font-size);
-  color: var(--foreground);
+.all-screen .navbar {
+  display: flex;
   position: absolute;
 }
-.all-screen .clock-face .icon:hover {
+.all-screen .navbar .icon {
+  padding: 0.5rem;
+  font-size: calc(var(--font-size) * 2);
+  color: var(--foreground);
+}
+.all-screen .navbar .icon:hover {
   cursor: pointer;
-}
-.all-screen .clock-face #home {
-  top: 96%;
-}
-.all-screen .clock-face #colour-mode {
-  top: 96%;
-  left: 10%;
-}
-.all-screen .clock-face #edit {
-  top: 96%;
-  left: 90%;
 }
 
 .dialline {

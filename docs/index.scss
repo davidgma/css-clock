@@ -142,28 +142,20 @@ body {
       box-shadow: 0 2px 4px -1px black;
     }
 
+  }
+  
+  & .navbar {
+    display: flex;
+    position: absolute;
+
     & .icon {
-      padding: 0.2rem;
-      font-size: var(--font-size);
+      padding: 0.5rem;
+      font-size: calc(var(--font-size) * 2);
       color: var(--foreground);
-      position: absolute;
+      // position: absolute;
       &:hover {
         cursor: pointer;
       }
-    }
-
-    & #home {
-      top: 96%;
-    }
-
-    & #colour-mode {
-      top: 96%;
-      left: 10%;
-    }
-
-    & #edit {
-      top: 96%;
-      left: 90%;
     }
   }
 }
