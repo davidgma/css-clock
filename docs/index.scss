@@ -12,12 +12,6 @@
   --icon-size: min(90vw / 8, 90vh / 8);
   --clock-size: min(91vw, 91vh);
   --transform-origin: 50% min(45vw, 45vh);
-  --clock-top: 4%;
-  --clock-left: 4%;
-  --nav-top: 80%;
-  --nav-left: 5%;
-  --allscreen-width: 100vw;
-  --allscreen-height: 100vh;
   --container-direction: column;
   --nav-direction: row;
 }
@@ -28,8 +22,8 @@ body {
 }
 
 #all-screen {
-  width: var(--allscreen-width);
-  height: var(--allscreen-height);
+  width: 100vw;
+  height: 100vh;
   position: relative;
   max-width: 100%;
   display: flex;
@@ -46,8 +40,6 @@ body {
     color: var(--foreground);
     font-size: var(--font-size);
     margin: auto;
-    // margin-top: var(--clock-top);
-    // margin-left: var(--clock-left);
 
     & time {
       position: absolute;
@@ -185,15 +177,6 @@ body {
   & #navbar {
     display: flex;
     flex-direction: var(--nav-direction);
-    // margin-top: 0;
-    // margin: auto;
-    // flex: 1 1 auto;
-    // align-self: center;
-    // align-items: flex-start;
-    // justify-content: flex-end;
-    // position: absolute;
-    // top: var(--nav-top);
-    // left: var(--nav-left);
 
     & .icon {
       padding: 0.2rem;

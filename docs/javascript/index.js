@@ -122,10 +122,7 @@ function placeItems() {
         root.style.setProperty('--clock-size', '81vh');
         root.style.setProperty('--font-size', '5.3vh');
         root.style.setProperty('--transform-origin', '50% 40vh');
-        root.style.setProperty('--clock-top', '1.5vh');
-        root.style.setProperty('--nav-top', '83vh');
         root.style.setProperty('--nav-direction', "row");
-        root.style.setProperty('--clock-left', "auto");
         root.style.setProperty('--container-direction', "column");
     }
     // 2. There's enough space below
@@ -139,15 +136,11 @@ function placeItems() {
         let spareSpace = vh - clockSize - iconSize - 20;
         let clockTop = spareSpace / 2;
         let navTop = clockTop + clockSize - spareSpace / 2 + 30;
-        root.style.setProperty('--nav-top', navTop.toFixed() + "px");
         root.style.setProperty('--clock-size', clockSize.toFixed() + 'px');
         root.style.setProperty('--font-size', fontSize.toFixed() + 'px');
         root.style.setProperty('--icon-size', iconSize.toFixed() + 'px');
         root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
-        root.style.setProperty('--clock-top', clockTop.toFixed() + "px");
-        root.style.setProperty('--nav-left', "20px");
         root.style.setProperty('--nav-direction', "row");
-        root.style.setProperty('--clock-left', "auto");
         root.style.setProperty('--container-direction', "column");
     }
     // 3. There's enough space to the left
@@ -162,14 +155,10 @@ function placeItems() {
         let clockTop = 30;
         let clockLeft = spareSpace / 2 + iconSize;
         let navTop = 0;
-        root.style.setProperty('--nav-top', navTop.toFixed() + "px");
         root.style.setProperty('--clock-size', clockSize.toFixed() + 'px');
         root.style.setProperty('--font-size', fontSize.toFixed() + 'px');
         root.style.setProperty('--icon-size', iconSize.toFixed() + 'px');
         root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
-        root.style.setProperty('--clock-top', clockTop.toFixed() + "px");
-        root.style.setProperty('--clock-left', clockLeft.toFixed() + "px");
-        root.style.setProperty('--nav-left', "20px");
         root.style.setProperty('--nav-direction', "column");
         root.style.setProperty('--container-direction', "row-reverse");
     }
