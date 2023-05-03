@@ -150,6 +150,10 @@ function placeItems() {
     root.style.setProperty('--transform-origin', '50% 40vh');
     root.style.setProperty('--nav-direction', "row");
     root.style.setProperty('--container-direction', "column");
+    root.style.setProperty('--line-height', "0");
+    root.style.setProperty('--line-width', "100%");
+    root.style.setProperty('--line-border-top', "1px solid var(--foreground2)");
+    root.style.setProperty('--line-border-right', "none");
   }
   // 2. There's enough space below
   else if (vh >= vw * 1.1) {
@@ -165,6 +169,10 @@ function placeItems() {
     root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
     root.style.setProperty('--nav-direction', "row");
     root.style.setProperty('--container-direction', "column");
+    root.style.setProperty('--line-height', "0");
+    root.style.setProperty('--line-width', "100%");
+    root.style.setProperty('--line-border-top', "1px solid var(--foreground2)");
+    root.style.setProperty('--line-border-right', "none");
   }
   // 3. There's enough space to the left
   if (vw >= vh * 1.1) {
@@ -180,5 +188,9 @@ function placeItems() {
     root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
     root.style.setProperty('--nav-direction', "column");
     root.style.setProperty('--container-direction', "row-reverse");
+    root.style.setProperty('--line-height', "100%");
+    root.style.setProperty('--line-width', "0");
+    root.style.setProperty('--line-border-top', "none");
+    root.style.setProperty('--line-border-right', "1px solid var(--foreground2)");
   }
 }

@@ -14,6 +14,10 @@
   --transform-origin: 50% min(45vw, 45vh);
   --container-direction: column;
   --nav-direction: row;
+  --line-height: 0;
+  --line-width: 0;
+  --line-border-top: none;
+  --line-border-right: none;
 }
 
 body {
@@ -161,6 +165,13 @@ body {
   background: var(--foreground);
   left: 50%;
   transform-origin: var(--transform-origin);
+}
+#all-screen .line {
+  width: var(--line-width);
+  height: var(--line-height);
+  border-top: var(--line-border-top);
+  border-right: var(--line-border-right);
+  padding: 0.5%;
 }
 #all-screen #navbar {
   display: flex;
