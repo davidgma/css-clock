@@ -17,6 +17,7 @@
   --nav-top: 80%;
   --nav-left: 5%;
   --allscreen-width: 100vw;
+  --container-direction: column;
   --nav-direction: row;
 }
 
@@ -30,6 +31,13 @@ body {
   // height: var(--allscreen-height);
   position: relative;
   max-width: 100%;
+  display: flex;
+  flex-direction: var(--container-direction);
+  align-items: center;
+  justify-content: center;
+  // display: grid;
+  // grid-template-rows: auto;
+  // justify-items: center;
 
   & #clock-face {
     border: min(0.5vh, 0.5vw) solid var(--foreground);
@@ -39,9 +47,9 @@ body {
     position: relative;
     color: var(--foreground);
     font-size: var(--font-size);
-    margin: auto;
-    margin-top: var(--clock-top);
-    margin-left: var(--clock-left);
+    margin-top: auto;
+    // margin-top: var(--clock-top);
+    // margin-left: var(--clock-left);
 
     & time {
       position: absolute;
@@ -105,7 +113,7 @@ body {
       bottom: 50%;
       left: 50%;
       background-color: red;
-      height: calc(var(--clock-size) / 2.2 );
+      height: 45%;
       width: min(1vh, 1vw);
       border-radius: calc(1cqi * 2);
       animation: turn 60s linear infinite;
@@ -117,7 +125,7 @@ body {
       bottom: 50%;
       left: 48.5%;
       background-color: var(--foreground);
-      height: calc(var(--clock-size) / 2.8 );
+      height: 37%;
       width: min(2.5vh, 2.5vw);
       border-radius: calc(2.5cqi * 2);
       animation: turn 3600s steps(60, end) infinite;
@@ -129,7 +137,7 @@ body {
       bottom: 50%;
       left: 48.5%;
       background-color: var(--foreground);
-      height: calc(var(--clock-size) / 3.5 );
+      height: 26%;
       width: min(2.5vh, 2.5vw);
       border-radius: calc(2.5cqi * 2);
       animation: turn 43200s linear infinite;
@@ -179,12 +187,17 @@ body {
   & #navbar {
     display: flex;
     flex-direction: var(--nav-direction);
-    position: absolute;
-    top: var(--nav-top);
-    left: var(--nav-left);
+    // margin: auto;
+    // flex: 1 1 auto;
+    // align-self: flex-end;
+    // align-items: flex-start;
+    // justify-content: flex-end;
+    // position: absolute;
+    // top: var(--nav-top);
+    // left: var(--nav-left);
 
     & .icon {
-      padding: 0.5rem;
+      padding: 0.2rem;
       font-size: var(--icon-size);
       color: var(--foreground2);
       &:hover {

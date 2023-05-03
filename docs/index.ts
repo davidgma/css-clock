@@ -152,6 +152,7 @@ function placeItems() {
     root.style.setProperty('--nav-top', '83vh');
     root.style.setProperty('--nav-direction', "row");
     root.style.setProperty('--clock-left', "auto");
+    root.style.setProperty('--container-direction', "column");
   }
   // 2. There's enough space below
   else if (vh >= vw * 1.1) {
@@ -173,6 +174,7 @@ function placeItems() {
     root.style.setProperty('--nav-left', "20px");
     root.style.setProperty('--nav-direction', "row");
     root.style.setProperty('--clock-left', "auto");
+    root.style.setProperty('--container-direction', "column");
   }
   // 3. There's enough space to the left
   if (vw >= vh * 1.1) {
@@ -185,7 +187,7 @@ function placeItems() {
     let spareSpace = vw - clockSize - iconSize;
     let clockTop = 30;
     let clockLeft = spareSpace /2 + iconSize;
-    let navTop = 30;
+    let navTop = 0;
     root.style.setProperty('--nav-top', navTop.toFixed() + "px");
     root.style.setProperty('--clock-size', clockSize.toFixed() + 'px');
     root.style.setProperty('--font-size', fontSize.toFixed() + 'px');
@@ -195,5 +197,6 @@ function placeItems() {
     root.style.setProperty('--clock-left', clockLeft.toFixed() + "px");
     root.style.setProperty('--nav-left', "20px");
     root.style.setProperty('--nav-direction', "column");
+    root.style.setProperty('--container-direction', "row-reverse");
   }
 }
