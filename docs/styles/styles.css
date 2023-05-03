@@ -12,9 +12,11 @@
   --clock-size: min(91vw, 91vh);
   --transform-origin: 50% min(45vw, 45vh);
   --clock-top: 4%;
+  --clock-left: 4%;
   --nav-top: 80%;
   --nav-left: 5%;
   --allscreen-width: 100vw;
+  --nav-direction: row;
 }
 
 body {
@@ -37,6 +39,7 @@ body {
   font-size: var(--font-size);
   margin: auto;
   margin-top: var(--clock-top);
+  margin-left: var(--clock-left);
 }
 #all-screen #clock-face time {
   position: absolute;
@@ -161,6 +164,7 @@ body {
 }
 #all-screen #navbar {
   display: flex;
+  flex-direction: var(--nav-direction);
   position: absolute;
   top: var(--nav-top);
   left: var(--nav-left);

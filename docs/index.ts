@@ -149,6 +149,8 @@ function placeItems() {
     root.style.setProperty('--transform-origin', '50% 40vh');
     root.style.setProperty('--clock-top', '1.5vh');
     root.style.setProperty('--nav-top', '83vh');
+    root.style.setProperty('--nav-direction', "row");
+    root.style.setProperty('--clock-left', "auto");
   }
   // 2. There's enough space below
   else if (vh >= vw * 1.1) {
@@ -168,25 +170,29 @@ function placeItems() {
     root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
     root.style.setProperty('--clock-top', clockTop.toFixed() + "px");
     root.style.setProperty('--nav-left', "20px");
-    
+    root.style.setProperty('--nav-direction', "row");
+    root.style.setProperty('--clock-left', "auto");
   }
-  // 3. There's enough space to the right
+  // 3. There's enough space to the left
   if (vw >= vh * 1.1) {
-    console.log('enough space right');
+    console.log('enough space left');
     // sizes in pixels but based on viewport sizes
     let clockSize = 91 * vh / 100; // pixels
-    let transformSize = (clockSize - 4) / 2;
+    let transformSize = (clockSize - 5) / 2;
     let fontSize = clockSize / 15;
     let iconSize = clockSize / 8;
-    let spareSpace = vw - clockSize - iconSize - 20;
+    let spareSpace = vw - clockSize - iconSize;
     let clockTop = 30;
-    let navTop = clockTop + clockSize - spareSpace / 2;
+    let clockLeft = spareSpace;
+    let navTop = 30;
     root.style.setProperty('--nav-top', navTop.toFixed() + "px");
     root.style.setProperty('--clock-size', clockSize.toFixed() + 'px');
     root.style.setProperty('--font-size', fontSize.toFixed() + 'px');
     root.style.setProperty('--icon-size', iconSize.toFixed() + 'px');
     root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
     root.style.setProperty('--clock-top', clockTop.toFixed() + "px");
+    root.style.setProperty('--clock-left', clockLeft.toFixed() + "px");
     root.style.setProperty('--nav-left', "20px");
+    root.style.setProperty('--nav-direction', "column");
   }
 }
