@@ -157,7 +157,7 @@ function placeItems() {
         let iconSize = clockSize / 8;
         let spareSpace = vw - clockSize - iconSize;
         let clockTop = 30;
-        let clockLeft = spareSpace;
+        let clockLeft = spareSpace / 2 + iconSize;
         let navTop = 30;
         root.style.setProperty('--nav-top', navTop.toFixed() + "px");
         root.style.setProperty('--clock-size', clockSize.toFixed() + 'px');
