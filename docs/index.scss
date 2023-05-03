@@ -23,7 +23,7 @@ body {
 
 #all-screen {
   width: 100vw;
-  height: 100vh;
+  height: 99vh;
   position: relative;
   max-width: 100%;
   display: flex;
@@ -40,6 +40,7 @@ body {
     color: var(--foreground);
     font-size: var(--font-size);
     margin: auto;
+    // container-type: inline-size;
 
     & time {
       position: absolute;
@@ -179,7 +180,7 @@ body {
     flex-direction: var(--nav-direction);
 
     & .icon {
-      padding: 0.2rem;
+      padding: 2%;
       font-size: var(--icon-size);
       color: var(--foreground2);
       &:hover {

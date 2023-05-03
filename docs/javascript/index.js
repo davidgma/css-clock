@@ -132,13 +132,10 @@ function placeItems() {
         let clockSize = 91 * vw / 100; // pixels
         let transformSize = (clockSize - 4) / 2;
         let fontSize = clockSize / 15;
-        let iconSize = clockSize / 8;
-        let spareSpace = vh - clockSize - iconSize - 20;
-        let clockTop = spareSpace / 2;
-        let navTop = clockTop + clockSize - spareSpace / 2 + 30;
+        // let iconSize = clockSize / 8;
         root.style.setProperty('--clock-size', clockSize.toFixed() + 'px');
         root.style.setProperty('--font-size', fontSize.toFixed() + 'px');
-        root.style.setProperty('--icon-size', iconSize.toFixed() + 'px');
+        // root.style.setProperty('--icon-size', iconSize.toFixed() + 'px');
         root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
         root.style.setProperty('--nav-direction', "row");
         root.style.setProperty('--container-direction', "column");
@@ -150,14 +147,10 @@ function placeItems() {
         let clockSize = 91 * vh / 100; // pixels
         let transformSize = (clockSize - 5) / 2;
         let fontSize = clockSize / 15;
-        let iconSize = clockSize / 8;
-        let spareSpace = vw - clockSize - iconSize;
-        let clockTop = 30;
-        let clockLeft = spareSpace / 2 + iconSize;
-        let navTop = 0;
+        // let iconSize = clockSize / 8;
         root.style.setProperty('--clock-size', clockSize.toFixed() + 'px');
         root.style.setProperty('--font-size', fontSize.toFixed() + 'px');
-        root.style.setProperty('--icon-size', iconSize.toFixed() + 'px');
+        // root.style.setProperty('--icon-size', iconSize.toFixed() + 'px');
         root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
         root.style.setProperty('--nav-direction', "column");
         root.style.setProperty('--container-direction', "row-reverse");

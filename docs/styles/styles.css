@@ -23,7 +23,7 @@ body {
 
 #all-screen {
   width: 100vw;
-  height: 100vh;
+  height: 99vh;
   position: relative;
   max-width: 100%;
   display: flex;
@@ -167,7 +167,7 @@ body {
   flex-direction: var(--nav-direction);
 }
 #all-screen #navbar .icon {
-  padding: 0.2rem;
+  padding: 2%;
   font-size: var(--icon-size);
   color: var(--foreground2);
 }
