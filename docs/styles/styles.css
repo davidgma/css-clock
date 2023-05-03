@@ -7,6 +7,7 @@
 :root {
   --background: #202020;
   --foreground: #e8e8e8;
+  --foreground2: #e8e8e8a0;
   --font-size: min(90vw / 15, 90vh / 15);
   --icon-size: min(90vw / 8, 90vh / 8);
   --clock-size: min(91vw, 91vh);
@@ -100,7 +101,7 @@ body {
   bottom: 50%;
   left: 50%;
   background-color: red;
-  height: min(43vh, 43vw);
+  height: calc(var(--clock-size) / 2.2);
   width: min(1vh, 1vw);
   border-radius: 2cqi;
   animation: turn 60s linear infinite;
@@ -111,7 +112,7 @@ body {
   bottom: 50%;
   left: 48.5%;
   background-color: var(--foreground);
-  height: min(35vh, 35vw);
+  height: calc(var(--clock-size) / 2.8);
   width: min(2.5vh, 2.5vw);
   border-radius: 5cqi;
   animation: turn 3600s steps(60, end) infinite;
@@ -122,7 +123,7 @@ body {
   bottom: 50%;
   left: 48.5%;
   background-color: var(--foreground);
-  height: min(23vh, 23vw);
+  height: calc(var(--clock-size) / 3.5);
   width: min(2.5vh, 2.5vw);
   border-radius: 5cqi;
   animation: turn 43200s linear infinite;
@@ -172,7 +173,7 @@ body {
 #all-screen #navbar .icon {
   padding: 0.5rem;
   font-size: var(--icon-size);
-  color: var(--foreground);
+  color: var(--foreground2);
 }
 #all-screen #navbar .icon:hover {
   cursor: pointer;

@@ -112,9 +112,12 @@ function toggleColourMode(event: MouseEvent) {
   if (background === '#E8E8E8') {
     root.style.setProperty('--background', '#202020');
     root.style.setProperty('--foreground', '#E8E8E8');
-  } else {
+    root.style.setProperty('--foreground2', '#E8E8E8a0');
+}
+  else {
     root.style.setProperty('--background', '#E8E8E8');
     root.style.setProperty('--foreground', '#202020');
+    root.style.setProperty('--foreground2', '#202020ed');
   }
 }
 
@@ -130,15 +133,13 @@ function openGithubVersion(event: MouseEvent) {
   }
 }
 
-// place items basd on viewport dimensions
+// place items based on viewport dimensions
 function placeItems() {
   let vh = window.innerHeight;
   let vw = window.innerWidth;
   let root = <HTMLElement>document.querySelector(':root');
 
-  console.log('vh: ' + vh);
-
-  // The icons/navbar needs 10% of the width or height
+  // console.log('vh: ' + vh);
 
   // 1. There's not enough space above or below
   if (vh <= vw * 1.1 && vw <= vh * 1.1) {
