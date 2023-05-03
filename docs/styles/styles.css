@@ -17,6 +17,7 @@
   --nav-top: 80%;
   --nav-left: 5%;
   --allscreen-width: 100vw;
+  --allscreen-height: 100vh;
   --container-direction: column;
   --nav-direction: row;
 }
@@ -28,6 +29,7 @@ body {
 
 #all-screen {
   width: var(--allscreen-width);
+  height: var(--allscreen-height);
   position: relative;
   max-width: 100%;
   display: flex;
@@ -43,7 +45,7 @@ body {
   position: relative;
   color: var(--foreground);
   font-size: var(--font-size);
-  margin-top: auto;
+  margin: auto;
 }
 #all-screen #clock-face time {
   position: absolute;
