@@ -11,13 +11,13 @@
   --font-size: min(90vw / 15, 90vh / 15);
   --icon-size: min(90vw / 8, 90vh / 8);
   --clock-size: min(91vw, 91vh);
-  --transform-origin: 0 min(45vw, 45vh);
+  --transform-origin: 50% min(45vw, 45vh);
   --container-direction: column;
   --nav-direction: row;
   --line-height: auto;
-  --line-width: 100%;
-  --line-border-top: 1px solid var(--foreground2);
-  --line-border-right: none;
+  --line-width: 100vw;
+  --line-border-horizonal: 1px solid var(--foreground2);
+  --line-border-vertical: none;
 }
 
 body {
@@ -27,9 +27,9 @@ body {
 
 #all-screen {
   width: 100vw;
-  height: 99vh;
+  height: 100vh;
   position: relative;
-  max-width: 100%;
+  // max-width: 100%;
   display: flex;
   flex-direction: var(--container-direction);
   align-items: center;
@@ -39,17 +39,19 @@ body {
   & #header {
     width: var(--line-width);
     height: var(--line-height);
-    // margin-bottom: auto;
-    // align-self: flex-start;
+    display: flex;
+    flex-direction: var(--container-direction);
+
     & #navbar-start {
       display: flex;
       flex-direction: var(--nav-direction);
-
     }
 
     & .line {
-      border-bottom: var(--line-border-top);
-      border-right: var(--line-border-right);
+      width: var(--line-width);
+      height: var(--line-height);
+      border-bottom: var(--line-border-horizontal);
+      border-right: var(--line-border-vertical);
     }
   }
 
@@ -61,8 +63,6 @@ body {
     position: relative;
     color: var(--foreground);
     font-size: var(--font-size);
-    // margin: auto;
-    // container-type: inline-size;
 
     & time {
       position: absolute;
@@ -199,18 +199,21 @@ body {
 
   & #footer {
     width: var(--line-width);
-    // height: var(--line-height);
-    // align-self: flex-end;
+    height: var(--line-height);
+    display: flex;
+    flex-direction: var(--container-direction);
+    // border: 1px solid white;
 
     & .line {
-      border-top: var(--line-border-top);
-      border-left: var(--line-border-right);
+      width: var(--line-width);
+      height: var(--line-height);
+      border-top: var(--line-border-horizontal);
+      border-left: var(--line-border-vertical);
     }
 
     & #navbar-end {
       display: flex;
       flex-direction: var(--nav-direction);
-
     }
   }
 }
@@ -226,7 +229,7 @@ body {
 }
 
 .icon {
-  padding: 2%;
+  padding: min(2vh, 2vw);
   font-size: var(--icon-size);
   color: var(--foreground2);
   &:hover {

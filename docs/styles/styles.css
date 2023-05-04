@@ -11,13 +11,13 @@
   --font-size: min(90vw / 15, 90vh / 15);
   --icon-size: min(90vw / 8, 90vh / 8);
   --clock-size: min(91vw, 91vh);
-  --transform-origin: 0 min(45vw, 45vh);
+  --transform-origin: 50% min(45vw, 45vh);
   --container-direction: column;
   --nav-direction: row;
   --line-height: auto;
-  --line-width: 100%;
-  --line-border-top: 1px solid var(--foreground2);
-  --line-border-right: none;
+  --line-width: 100vw;
+  --line-border-horizonal: 1px solid var(--foreground2);
+  --line-border-vertical: none;
 }
 
 body {
@@ -27,9 +27,8 @@ body {
 
 #all-screen {
   width: 100vw;
-  height: 99vh;
+  height: 100vh;
   position: relative;
-  max-width: 100%;
   display: flex;
   flex-direction: var(--container-direction);
   align-items: center;
@@ -38,14 +37,18 @@ body {
 #all-screen #header {
   width: var(--line-width);
   height: var(--line-height);
+  display: flex;
+  flex-direction: var(--container-direction);
 }
 #all-screen #header #navbar-start {
   display: flex;
   flex-direction: var(--nav-direction);
 }
 #all-screen #header .line {
-  border-bottom: var(--line-border-top);
-  border-right: var(--line-border-right);
+  width: var(--line-width);
+  height: var(--line-height);
+  border-bottom: var(--line-border-horizontal);
+  border-right: var(--line-border-vertical);
 }
 #all-screen #clock-face {
   border: min(0.5vh, 0.5vw) solid var(--foreground);
@@ -179,10 +182,15 @@ body {
 }
 #all-screen #footer {
   width: var(--line-width);
+  height: var(--line-height);
+  display: flex;
+  flex-direction: var(--container-direction);
 }
 #all-screen #footer .line {
-  border-top: var(--line-border-top);
-  border-left: var(--line-border-right);
+  width: var(--line-width);
+  height: var(--line-height);
+  border-top: var(--line-border-horizontal);
+  border-left: var(--line-border-vertical);
 }
 #all-screen #footer #navbar-end {
   display: flex;
@@ -199,7 +207,7 @@ body {
 }
 
 .icon {
-  padding: 2%;
+  padding: min(2vh, 2vw);
   font-size: var(--icon-size);
   color: var(--foreground2);
 }

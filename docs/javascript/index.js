@@ -125,9 +125,9 @@ function placeItems() {
         root.style.setProperty('--nav-direction', "row");
         root.style.setProperty('--container-direction', "column");
         root.style.setProperty('--line-height', "auto");
-        root.style.setProperty('--line-width', "100%");
-        root.style.setProperty('--line-border-top', "1px solid var(--foreground2)");
-        root.style.setProperty('--line-border-right', "none");
+        root.style.setProperty('--line-width', "100vw");
+        root.style.setProperty('--line-border-horizontal', "1px solid var(--foreground2)");
+        root.style.setProperty('--line-border-vertical', "none");
     }
     // 2. There's enough space above and below
     else if (vh >= vw * 1.2) {
@@ -144,13 +144,13 @@ function placeItems() {
         root.style.setProperty('--nav-direction', "row");
         root.style.setProperty('--container-direction', "column");
         root.style.setProperty('--line-height', "auto");
-        root.style.setProperty('--line-width', "100%");
-        root.style.setProperty('--line-border-top', "1px solid var(--foreground2)");
-        root.style.setProperty('--line-border-right', "none");
+        root.style.setProperty('--line-width', "100vw");
+        root.style.setProperty('--line-border-horizontal', "1px solid var(--foreground2)");
+        root.style.setProperty('--line-border-vertical', "none");
     }
-    // 3. There's enough space to the left
+    // 3. There's enough space to the left and right
     if (vw > vh * 1.2) {
-        console.log('enough space left');
+        console.log('enough space left and right');
         // sizes in pixels but based on viewport sizes
         let clockSize = 91 * vh / 100; // pixels
         let transformSize = (clockSize - 5) / 2;
@@ -161,10 +161,10 @@ function placeItems() {
         // root.style.setProperty('--icon-size', iconSize.toFixed() + 'px');
         root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
         root.style.setProperty('--nav-direction', "column");
-        root.style.setProperty('--container-direction', "row-reverse");
-        root.style.setProperty('--line-height', "100%");
+        root.style.setProperty('--container-direction', "row");
+        root.style.setProperty('--line-height', "100vh");
         root.style.setProperty('--line-width', "auto");
-        root.style.setProperty('--line-border-top', "none");
-        root.style.setProperty('--line-border-right', "1px solid var(--foreground2)");
+        root.style.setProperty('--line-border-horizontal', "none");
+        root.style.setProperty('--line-border-vertical', "1px solid var(--foreground2)");
     }
 }
