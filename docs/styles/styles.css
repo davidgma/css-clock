@@ -33,7 +33,16 @@ body {
   display: flex;
   flex-direction: var(--container-direction);
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+#all-screen #header {
+  width: var(--line-width);
+  height: var(--line-height);
+}
+#all-screen #header .line {
+  border-bottom: var(--line-border-top);
+  border-right: var(--line-border-right);
+  padding: 0.5%;
 }
 #all-screen #clock-face {
   border: min(0.5vh, 0.5vw) solid var(--foreground);
@@ -43,7 +52,6 @@ body {
   position: relative;
   color: var(--foreground);
   font-size: var(--font-size);
-  margin: auto;
 }
 #all-screen #clock-face time {
   position: absolute;
@@ -166,23 +174,24 @@ body {
   left: 50%;
   transform-origin: var(--transform-origin);
 }
-#all-screen .line {
+#all-screen #footer {
   width: var(--line-width);
   height: var(--line-height);
-  border-top: var(--line-border-top);
-  border-right: var(--line-border-right);
-  padding: 0.5%;
 }
-#all-screen #navbar {
+#all-screen #footer .line {
+  border-top: var(--line-border-top);
+  border-left: var(--line-border-right);
+}
+#all-screen #footer #navbar {
   display: flex;
   flex-direction: var(--nav-direction);
 }
-#all-screen #navbar .icon {
+#all-screen #footer #navbar .icon {
   padding: 2%;
   font-size: var(--icon-size);
   color: var(--foreground2);
 }
-#all-screen #navbar .icon:hover {
+#all-screen #footer #navbar .icon:hover {
   cursor: pointer;
 }
 
