@@ -40,8 +40,11 @@ onload = (event) => {
     window.addEventListener('resize', placeItems);
     setInterval(() => {
         let now = new Date();
-        document.title = now.getHours().toFixed().padStart(2, '0') + ":" + now.getMinutes().toFixed().padStart(2, '0');
-    }, 100);
+        let time = now.getHours().toFixed().padStart(2, '0') + ":" + now.getMinutes().toFixed().padStart(2, '0');
+        if (document.title !== time) {
+            document.title = time;
+        }
+    }, 1000);
 };
 function setHands() {
     /* to set current time */
