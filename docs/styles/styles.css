@@ -43,6 +43,7 @@ body {
 #all-screen #header #navbar-start {
   display: flex;
   flex-direction: var(--nav-direction);
+  justify-content: space-around;
 }
 #all-screen #header .line {
   width: var(--line-width);
@@ -195,6 +196,7 @@ body {
 #all-screen #footer #navbar-end {
   display: flex;
   flex-direction: var(--nav-direction);
+  justify-content: space-around;
 }
 
 @keyframes turn {
@@ -207,7 +209,7 @@ body {
 }
 
 .icon {
-  padding: min(2vh, 2vw) min(4vh, 4vw);
+  padding: min(2vh, 2vw);
   font-size: var(--icon-size);
   color: var(--foreground2);
 }
