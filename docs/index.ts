@@ -48,6 +48,12 @@ onload = (event) => {
   });
 
   window.addEventListener('resize', placeItems);
+
+  setInterval(() => { 
+    let now = new Date();
+    document.title = now.getHours().toFixed().padStart(2, '0') + ":" + now.getMinutes().toFixed().padStart(2, '0')
+      + ":" + now.getSeconds().toFixed().padStart(2, '0');
+  });
 };
 
 function setHands() {
