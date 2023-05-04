@@ -11,12 +11,12 @@
   --font-size: min(90vw / 15, 90vh / 15);
   --icon-size: min(90vw / 8, 90vh / 8);
   --clock-size: min(91vw, 91vh);
-  --transform-origin: 50% min(45vw, 45vh);
+  --transform-origin: 0 min(45vw, 45vh);
   --container-direction: column;
   --nav-direction: row;
-  --line-height: 0;
-  --line-width: 0;
-  --line-border-top: none;
+  --line-height: auto;
+  --line-width: 100%;
+  --line-border-top: 1px solid var(--foreground2);
   --line-border-right: none;
 }
 
@@ -39,10 +39,13 @@ body {
   width: var(--line-width);
   height: var(--line-height);
 }
+#all-screen #header #navbar-start {
+  display: flex;
+  flex-direction: var(--nav-direction);
+}
 #all-screen #header .line {
   border-bottom: var(--line-border-top);
   border-right: var(--line-border-right);
-  padding: 0.5%;
 }
 #all-screen #clock-face {
   border: min(0.5vh, 0.5vw) solid var(--foreground);
@@ -176,23 +179,14 @@ body {
 }
 #all-screen #footer {
   width: var(--line-width);
-  height: var(--line-height);
 }
 #all-screen #footer .line {
   border-top: var(--line-border-top);
   border-left: var(--line-border-right);
 }
-#all-screen #footer #navbar {
+#all-screen #footer #navbar-end {
   display: flex;
   flex-direction: var(--nav-direction);
-}
-#all-screen #footer #navbar .icon {
-  padding: 2%;
-  font-size: var(--icon-size);
-  color: var(--foreground2);
-}
-#all-screen #footer #navbar .icon:hover {
-  cursor: pointer;
 }
 
 @keyframes turn {
@@ -202,6 +196,15 @@ body {
 }
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.icon {
+  padding: 2%;
+  font-size: var(--icon-size);
+  color: var(--foreground2);
+}
+.icon:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */

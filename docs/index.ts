@@ -142,7 +142,7 @@ function placeItems() {
   // console.log('vh: ' + vh);
 
   // 1. There's not enough space above or below
-  if (vh <= vw * 1.1 && vw <= vh * 1.1) {
+  if (vh < vw * 1.2 && vw < vh * 1.2) {
     console.log('not enough space above or below');
     // Make the clock face smaller with some margin at the top and put the icons at the bottom.
     root.style.setProperty('--clock-size', '81vh');
@@ -150,14 +150,14 @@ function placeItems() {
     root.style.setProperty('--transform-origin', '50% 40vh');
     root.style.setProperty('--nav-direction', "row");
     root.style.setProperty('--container-direction', "column");
-    root.style.setProperty('--line-height', "0");
+    root.style.setProperty('--line-height', "auto");
     root.style.setProperty('--line-width', "100%");
     root.style.setProperty('--line-border-top', "1px solid var(--foreground2)");
     root.style.setProperty('--line-border-right', "none");
   }
-  // 2. There's enough space below
-  else if (vh >= vw * 1.1) {
-    console.log(' enough space below');
+  // 2. There's enough space above and below
+  else if (vh >= vw * 1.2) {
+    console.log(' enough space above and below');
     // sizes in pixels but based on viewport sizes
     let clockSize = 91 * vw /100; // pixels
     let transformSize = (clockSize - 4) / 2;
@@ -169,13 +169,13 @@ function placeItems() {
     root.style.setProperty('--transform-origin', '50% ' + transformSize.toFixed() + 'px');
     root.style.setProperty('--nav-direction', "row");
     root.style.setProperty('--container-direction', "column");
-    root.style.setProperty('--line-height', "0");
+    root.style.setProperty('--line-height', "auto");
     root.style.setProperty('--line-width', "100%");
     root.style.setProperty('--line-border-top', "1px solid var(--foreground2)");
     root.style.setProperty('--line-border-right', "none");
   }
   // 3. There's enough space to the left
-  if (vw >= vh * 1.1) {
+  if (vw > vh * 1.2) {
     console.log('enough space left');
     // sizes in pixels but based on viewport sizes
     let clockSize = 91 * vh / 100; // pixels
@@ -189,7 +189,7 @@ function placeItems() {
     root.style.setProperty('--nav-direction', "column");
     root.style.setProperty('--container-direction', "row-reverse");
     root.style.setProperty('--line-height', "100%");
-    root.style.setProperty('--line-width', "0");
+    root.style.setProperty('--line-width', "auto");
     root.style.setProperty('--line-border-top', "none");
     root.style.setProperty('--line-border-right', "1px solid var(--foreground2)");
   }
