@@ -229,7 +229,7 @@ body {
 }
 
 .icon {
-  padding: min(2vh, 2vw);
+  padding: min(2vh, 2vw) min(4vh, 4vw);
   font-size: var(--icon-size);
   color: var(--foreground2);
   &:hover {
